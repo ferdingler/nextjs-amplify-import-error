@@ -1,4 +1,13 @@
+const nodeExternals = require('webpack-node-externals');
+
+
 module.exports = {
-  webpack5: false,
   reactStrictMode: true,
+
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Important: return the modified config
+    config.externals = [...config.externals, nodeExternals()];
+
+    return config
+  },
 }
