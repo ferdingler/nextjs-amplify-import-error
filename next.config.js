@@ -11,7 +11,7 @@ module.exports = {
     // config.target = 'node';
     // config.externalsPresets = { node: true };
     // console.
-    config.externals = [...config.externals, nodeExternals()];
+    config.externals = [...config.externals, 'argon2']
 
     return config
   },
