@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import argon2 from 'argon2'
+import argon2Fix from 'argon2-browser'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
@@ -11,6 +11,9 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
 
-  const hashedPassword = await argon2.hash('secret password');
+  const hashedPassword = 'test'
+  await argon2Fix.verify({ pass: 'secret password', encoded: 'asd' })
+  .then(() => console.log('OK'))
+  .catch(e => console.error(e.message, e.code))
   res.status(200).json({ password: hashedPassword })
 }
