@@ -8,8 +8,9 @@ module.exports = {
     // Important: return the modified config
     config.externals = config.externals || [];
 
-    config.target = 'node';
-    config.externalsPresets = { node: true };
+    // config.target = 'node';
+    // config.externalsPresets = { node: true };
+    // console.
     config.externals = [...config.externals, nodeExternals()];
 
     return config
