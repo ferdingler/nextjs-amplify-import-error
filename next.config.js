@@ -7,7 +7,9 @@ module.exports = {
 
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Important: return the modified config
-    config.externals = [nodeExternals()];
+    config.externals = config.externals || [];
+
+    config.externals = [config.externals, ...nodeExternals()];
 
     return config
   },
