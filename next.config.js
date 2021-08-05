@@ -8,7 +8,7 @@ module.exports = {
     // Important: return the modified config
     config.target = 'node';
     config.externalsPresets = { node: true };
-    config.externals = [nodeExternals()];;
+    config.externals = [nodeExternals()];
 
     return config
   },
