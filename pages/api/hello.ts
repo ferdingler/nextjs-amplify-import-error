@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import argon2 from 'argon2-browser/lib/argon2.js'
+import argon2 from 'argon2-browser'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
