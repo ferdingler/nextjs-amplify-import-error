@@ -2,7 +2,6 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import argon2 from 'argon2-browser'
 
 const Home = () => {
   return (
@@ -71,17 +70,5 @@ const Home = () => {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-
-  const hashedPassword = 'test'
-  await argon2.verify({ pass: 'secret password', encoded: 'asd' })
-  .then(() => console.log('OK'))
-  .catch(e => console.error(e.message, e.code))
-  
-  return {
-    props: {}
-  }
-
-}
 
 export default Home
